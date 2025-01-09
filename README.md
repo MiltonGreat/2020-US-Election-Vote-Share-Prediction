@@ -4,6 +4,19 @@
 
 This project analyzes the county-wise vote share from the 2020 United States presidential election using a dataset containing detailed county demographics, racial composition, income statistics, and occupational distributions. The project aims to predict the Democratic vote share percentage using machine learning models and gain insights into the factors influencing election outcomes.
 
+### Quality Issues:
+
+- Missing values in demographic or income data.
+- Potential for outliers in median income and voting percentages.
+
+Cleaning:
+- Impute missing data using median values for income or percentages.
+- Scale numerical features for regression tasks.
+
+Known Limitations:
+- Data is geographically limited to the US, affecting generalizability.
+- High correlation between certain features (e.g., race and party preferences) may require careful handling to avoid multicollinearity.
+
 ### Objectives
 
 - Predict the Democratic vote share percentage at the county level using machine learning models.
