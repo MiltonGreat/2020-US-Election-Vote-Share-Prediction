@@ -2,20 +2,7 @@
 
 ### Overview
 
-This project analyzes the county-wise vote share from the 2020 United States presidential election using a dataset containing detailed county demographics, racial composition, income statistics, and occupational distributions. The project aims to predict the Democratic vote share percentage using machine learning models and gain insights into the factors influencing election outcomes.
-
-### Quality Issues:
-
-- Missing values in demographic or income data.
-- Potential for outliers in median income and voting percentages.
-
-Cleaning:
-- Impute missing data using median values for income or percentages.
-- Scale numerical features for regression tasks.
-
-Known Limitations:
-- Data is geographically limited to the US, affecting generalizability.
-- High correlation between certain features (e.g., race and party preferences) may require careful handling to avoid multicollinearity.
+This project analyzes the United States 2020 presidential election data using machine learning techniques to understand voting patterns and demographic relationships. The analysis includes data preprocessing, feature engineering, model training, and visualization of various electoral trends.
 
 ### Objectives
 
@@ -27,53 +14,26 @@ Known Limitations:
 
 The dataset contains the following columns:
 
-- County: The county name.
-- State: The state where the county is located.
-- Population: Various population statistics (total, race, education level).
-- Voting Data: The number of votes for the Democratic, Republican, and other parties.
-- Vote Share: The percentage of votes for each party.
+- Vote counts and percentages for Democratic, Republican, and other parties
+- Demographic information
+- Economic indicators
+- Educational statistics
+- Occupational data
+- Geographic data
 
-### Features
+### Feature Engineering
 
-Election Data:
-- 2020 Democrat vote raw and %
-- 2020 Republican vote raw and %
-- 2020 other vote raw and %
-
-Demographics:
-- Racial composition (e.g., Hispanic, White, Black, Asian percentages)
-- Population size and density
-
-Economic Factors:
-- Median and mean income
-- Income inequality (Gini Index)
-
-Educational Attainment:
-- Levels from "less than 9th grade" to "graduate or professional degree"
-
-Occupational Distribution:
-- Percentages of the population engaged in different job categories (e.g., management, sales, construction)
+- Vote share calculations
+- Total votes computation
+- Party percentage calculations
+- Vote share difference analysis
 
 ### Data Preprocessing Steps
 
-Missing Values:
-- Missing values were imputed using mean imputation for numerical columns to fill gaps in the dataset.
-
-Handling Commas in Numeric Data:
-- Columns with commas (such as 'Median income (dollars)' and 'Total Population') were cleaned, removing commas and converting to numeric data types.
-
- Outlier Detection and Capping:
- - Extreme outliers in the 'Median income (dollars)' column were capped to improve model stability.
-
- Feature Engineering:
- - New features were created to calculate vote shares for each party (Democratic, Republican, and Other).
- - A difference between the Democrat and Republican vote shares was also calculated.
-
- Feature Scaling:
- - Numeric columns were normalized using MinMax Scaling to bring all features to a common scale.
-
- One-Hot Encoding:
- - The 'state' column was one-hot encoded to create binary variables for each state.
+- Missing value handling
+- Outlier detection and capping
+- Feature scaling and normalization
+- PCA dimensionality reduction
 
 ### Data Visualization
 
@@ -92,10 +52,9 @@ Models Implemented
 - Lasso Regression
 - Random Forest Regressor
 
-Evaluation Metrics
-- Mean Absolute Error (MAE)
-- Mean Squared Error (MSE)
-- R-squared (R²)
+### Model Performance
+
+The Random Forest model achieved an average cross-validation R² score of 0.9577.
 
 ### Performance Summary
 
