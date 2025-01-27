@@ -1,4 +1,4 @@
-# 2020-US-Election-Vote-Share-Prediction
+# 2020 US Election Vote Share Prediction
 
 ### Overview
 
